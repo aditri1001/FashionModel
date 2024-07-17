@@ -88,7 +88,7 @@ const Form: React.FC = () => {
         }),
         onSubmit: (values) => {
             // dispatch(addTodo(values));
-            // console.log(list);
+            console.log(values);
         },
     });
 
@@ -98,18 +98,18 @@ const Form: React.FC = () => {
             <form onSubmit={formik.handleSubmit} className="form-container">
                 <header className="flex justify-center items-center space-x-4">
                     <div>
-                        <h1 className="text-9xl font-bodoni-moda">S2</h1>
+                        <h1 className=" text-9xl font-bodoni-moda">S2</h1>
                     </div>
                     <div className="">
                         <div className='text-left'>
-                            <h1 className="text-5xl font-bodoni-moda">TALENTS & EVENTS</h1>
-                            <h2 className="text-5xl font-bold text-red-500 font-inria-serif ">CONTACT</h2>
-                            <hr className="border-red-500 ml-2 w-52" style={{ borderTopWidth: '3px' }} />
+                            <h1 className="  text-5xl font-bodoni-moda">TALENTS & EVENTS</h1>
+                            <h2 className=" text-5xl font-bold text-red-500 font-inria-serif ">BECOME A MODEL</h2>
+                            <hr className="border-red-500 ml-2 w-" style={{ borderTopWidth: '3px' }} />
                         </div>
                     </div>
                 </header>
-                <div className='flex items-center'>
-                    <div className='w-4/5'>
+                <div className='flex items-center max-[834px]:flex-col-reverse'>
+                    <div className='w-full min-[834px]:w-4/5'>
                         <div className='w-full'>
                             <input
                                 id="fullName"
@@ -174,6 +174,7 @@ const Form: React.FC = () => {
                                     onChange={formik.handleChange}
                                     onBlur={formik.handleBlur}
                                     checked={formik.values.gender === 'Male'}
+                                    className='mr-2'
                                 />
                                 Male
                             </label>
@@ -185,6 +186,7 @@ const Form: React.FC = () => {
                                     onChange={formik.handleChange}
                                     onBlur={formik.handleBlur}
                                     checked={formik.values.gender === 'Female'}
+                                    className='mr-2'
                                 />
                                 Female
                             </label>
@@ -196,6 +198,7 @@ const Form: React.FC = () => {
                                     onChange={formik.handleChange}
                                     onBlur={formik.handleBlur}
                                     checked={formik.values.gender === 'Others'}
+                                    className='mr-2'
                                 />
                                 Others
                             </label>
@@ -273,8 +276,8 @@ const Form: React.FC = () => {
                             />
                         </div>
                     </div>
-                    <div className="container sm:w-1/2 mx-auto p-5">
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+                    <div className="container max-[834px]:w-full min-[834px]:w-1/2 mx-auto p-5">
+                        <div className="grid max-[834px]:grid-cols-2 max-[1024px]:grid-cols-1 lg:grid-cols-2 gap-5">
                             {images.map((src, index) => (
                                 <div key={index} className="relative w-full h-1/4 pb-[100%] bg-gray-400">
                                     <img src={src} alt={`model-${index}`} className="absolute top-0 left-0 w-full h-full object-cover rounded-lg" />
