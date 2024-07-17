@@ -51,7 +51,7 @@ export const addItems = createSlice({
                 ageConsent: action.payload.ageConsent
             }
             state.slice.push(addThis);
-            console.log('State after adding item:', JSON.parse(JSON.stringify(state)));
+            // console.log('State after adding item:', JSON.parse(JSON.stringify(state)));
         }
     }
 })

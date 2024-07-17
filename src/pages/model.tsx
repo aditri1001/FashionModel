@@ -100,7 +100,7 @@ const Form: React.FC = () => {
                 privacyNotice: values.privacyNotice,
                 ageConsent: values.ageConsent,
             };
-            // console.log(newNote);
+            console.log(newNote);
             dispatch(addItem(newNote));
         },
     });
