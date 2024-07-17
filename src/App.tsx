@@ -6,6 +6,7 @@ import Model from "./pages/model"
 import Portfolio from './pages/portfolio'
 import Projects from "./pages/projects"
 import Photographers from './pages/photoGraphers'
+import About from './pages/About'
 function App() {
 
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/project" element={<Projects />} />
         <Route path="/photographers" element={<Photographers />} />
+        <Route path="/about" element={<About />} />
       </Routes>
     </Router>
   )
