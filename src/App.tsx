@@ -4,9 +4,8 @@ import { Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import Model from "./pages/model"
 import Portfolio from './pages/portfolio'
-import About from "./pages/About"
 import Photographers from './pages/SectionPage'
-
+import About from './pages/About'
 function App() {
 
   return (

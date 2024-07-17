@@ -4,13 +4,13 @@ import * as Yup from 'yup';
 import Navbar from "../components/common/Navbar/Navbar";
 import "../components/common/Navbar/Navbar.css";
 import "./form.css";
-// import { useDispatch } from 'react-redux';
-// import { addTodo } from '../features/Slice'
-// import { useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux';
+import { addItem } from '../features/Slice';
+// import { RootState } from '../App/store';
 
 const Form: React.FC = () => {
-    // const dispatch = useDispatch();
-    // const list = useSelector((state) => state.todo)
+    const dispatch = useDispatch();
+    // const items = useSelector((state: RootState) => state.addItem);
 
     const [images, setImages] = useState<string[]>(["", "", "", ""]);
     const [fileNames, setFileNames] = useState({
@@ -27,15 +27,10 @@ const Form: React.FC = () => {
             formik.setFieldValue(fieldName, file);
             setFileNames(prev => ({ ...prev, [fieldName]: file.name }));
 
-            // Create a URL for the file and update the images array
             const fileURL = URL.createObjectURL(file);
-
             setImages(prevImages => {
-
                 const newImages = [...prevImages];
-
                 newImages[index] = fileURL;
-
                 return newImages;
             });
 
@@ -44,7 +39,6 @@ const Form: React.FC = () => {
             setFileNames(prev => ({ ...prev, [fieldName]: '' }));
             setImages(prevImages => {
                 const newImages = [...prevImages];
-
                 newImages[index] = "";
                 return newImages;
             });
@@ -64,10 +58,10 @@ const Form: React.FC = () => {
             instagramHandle: '',
             profession: '',
             about: '',
-            leftSideShot: null,
-            rightSideShot: null,
-            headShot: null,
-            fullLength: null,
+            leftSideShot: '' as string | null,
+            rightSideShot: '' as string | null,
+            headShot: '' as string | null,
+            fullLength: '' as string | null,
             privacyNotice: false,
             ageConsent: false,
         },
@@ -87,9 +81,27 @@ const Form: React.FC = () => {
             ageConsent: Yup.boolean().oneOf([true], 'Required'),
         }),
         onSubmit: (values) => {
-            // dispatch(addTodo(values));
-            console.log(values);
-            console.log(images)
+            const newNote = {
+                fullName: values.fullName,
+                email: values.email,
+                number: values.number,
+                dob: values.dob,
+                gender: values.gender,
+                height: values.height,
+                portfolioLink: values.portfolioLink,
+                address: values.address,
+                instagramHandle: values.instagramHandle,
+                profession: values.profession,
+                about: values.about,
+                leftSideShot: values.leftSideShot,
+                rightSideShot: values.rightSideShot,
+                headShot: values.headShot,
+                fullLength: values.fullLength,
+                privacyNotice: values.privacyNotice,
+                ageConsent: values.ageConsent,
+            };
+            console.log(newNote);
+            dispatch(addItem(newNote));
         },
     });
 
