@@ -89,6 +89,7 @@ const Form: React.FC = () => {
         onSubmit: (values) => {
             // dispatch(addTodo(values));
             console.log(values);
+            console.log(images)
         },
     });
 

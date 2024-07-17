@@ -6,6 +6,7 @@ import Model from "./pages/model"
 import Portfolio from './pages/portfolio'
 import About from "./pages/About"
 import Photographers from './pages/SectionPage'
+
 function App() {
 
   return (
@@ -14,7 +15,6 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/model" element={<Model />} />
         <Route path="/portfolio" element={<Portfolio />} />
-        {/* <Route path="/project" element={<Projects />} /> */}
         <Route path="/photographers" element={<Photographers />} />
         <Route path="/about" element={<About />} />
       </Routes>
