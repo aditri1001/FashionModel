@@ -11,6 +11,7 @@ import { addItem } from '../features/Slice';
 const Form: React.FC = () => {
     const dispatch = useDispatch();
     // const items = useSelector((state: RootState) => state.addItem);
+    
 
     const [images, setImages] = useState<string[]>(["", "", "", ""]);
     const [fileNames, setFileNames] = useState({
@@ -100,7 +101,7 @@ const Form: React.FC = () => {
                 privacyNotice: values.privacyNotice,
                 ageConsent: values.ageConsent,
             };
-            console.log(newNote);
+            // console.log(newNote);
             dispatch(addItem(newNote));
         },
     });
@@ -132,6 +133,7 @@ const Form: React.FC = () => {
                                 onBlur={formik.handleBlur}
                                 value={formik.values.fullName}
                                 placeholder="Enter Your Full Name"
+                                className='border-gray-300 border-2'
                             />
                         </div>
                         {formik.touched.fullName && formik.errors.fullName ? <div>{formik.errors.fullName}</div> : null}
@@ -144,6 +146,7 @@ const Form: React.FC = () => {
                                 onBlur={formik.handleBlur}
                                 value={formik.values.email}
                                 placeholder="Enter Your Email"
+                                className='border-gray-300 border-2'
                             />
                         </div>
                         {formik.touched.email && formik.errors.email ? <div>{formik.errors.email}</div> : null}
@@ -156,6 +159,7 @@ const Form: React.FC = () => {
                                 onBlur={formik.handleBlur}
                                 value={formik.values.number}
                                 placeholder="Enter Your Number"
+                                className='border-gray-300 border-2'
                             />
                         </div>
                         {formik.touched.number && formik.errors.number ? <div>{formik.errors.number}</div> : null}
@@ -166,11 +170,12 @@ const Form: React.FC = () => {
                                     type="date"
                                     id="dob"
                                     name="dob"
-                                    className="date-input-field"
+                                    className="date-input-field border-gray-300 border-2"
                                     placeholder='Enter Your Dob'
                                     onChange={formik.handleChange}
                                     onBlur={formik.handleBlur}
                                     value={formik.values.dob}
+                                    
                                 />
                                 <span className="date-input-icon">&#x1F4C5;</span>
                             </div>
@@ -187,7 +192,7 @@ const Form: React.FC = () => {
                                     onChange={formik.handleChange}
                                     onBlur={formik.handleBlur}
                                     checked={formik.values.gender === 'Male'}
-                                    className='mr-2'
+                                    className='mr-2 border-gray-300 border-2'
                                 />
                                 Male
                             </label>
@@ -199,7 +204,7 @@ const Form: React.FC = () => {
                                     onChange={formik.handleChange}
                                     onBlur={formik.handleBlur}
                                     checked={formik.values.gender === 'Female'}
-                                    className='mr-2'
+                                    className='mr-2 border-gray-300 border-2'
                                 />
                                 Female
                             </label>
@@ -211,7 +216,7 @@ const Form: React.FC = () => {
                                     onChange={formik.handleChange}
                                     onBlur={formik.handleBlur}
                                     checked={formik.values.gender === 'Others'}
-                                    className='mr-2'
+                                    className='mr-2 border-gray-300 border-2'
                                 />
                                 Others
                             </label>
@@ -226,6 +231,7 @@ const Form: React.FC = () => {
                                 onBlur={formik.handleBlur}
                                 value={formik.values.height}
                                 placeholder="Height (cm)"
+                                className='border-gray-300 border-2'
                             />
                             {formik.touched.height && formik.errors.height ? <div>{formik.errors.height}</div> : null}
                         </div>
@@ -238,6 +244,7 @@ const Form: React.FC = () => {
                                 onBlur={formik.handleBlur}
                                 value={formik.values.portfolioLink}
                                 placeholder="Portfolio Link"
+                                className='border-gray-300 border-2'
                             />
                         </div>
                         {formik.touched.portfolioLink && formik.errors.portfolioLink ? <div>{formik.errors.portfolioLink}</div> : null}
@@ -250,6 +257,7 @@ const Form: React.FC = () => {
                                 onBlur={formik.handleBlur}
                                 value={formik.values.address}
                                 placeholder="Full Address"
+                                className='border-gray-300 border-2'
                             />
                         </div>
                         {formik.touched.address && formik.errors.address ? <div>{formik.errors.address}</div> : null}
@@ -262,6 +270,7 @@ const Form: React.FC = () => {
                                 onBlur={formik.handleBlur}
                                 value={formik.values.instagramHandle}
                                 placeholder="Instagram Handle"
+                                className='border-gray-300 border-2'
                             />
                         </div>
                         {formik.touched.instagramHandle && formik.errors.instagramHandle ? <div>{formik.errors.instagramHandle}</div> : null}
@@ -274,6 +283,7 @@ const Form: React.FC = () => {
                                 onBlur={formik.handleBlur}
                                 value={formik.values.profession}
                                 placeholder="Current Profession"
+                                className='border-gray-300 border-2'
                             />
                         </div>
                         {formik.touched.profession && formik.errors.profession ? <div>{formik.errors.profession}</div> : null}
@@ -286,14 +296,15 @@ const Form: React.FC = () => {
                                 value={formik.values.about}
                                 placeholder="About You"
                                 maxLength={200}
+                                className='border-gray-300 border-2'
                             />
                         </div>
                     </div>
                     <div className="container max-[834px]:w-full min-[834px]:w-1/2 mx-auto p-5">
                         <div className="grid max-[834px]:grid-cols-2 max-[1024px]:grid-cols-1 lg:grid-cols-2 gap-5">
                             {images.map((src, index) => (
-                                <div key={index} className="relative w-full h-1/4 pb-[100%] bg-gray-400">
-                                    <img src={src} alt={`model-${index}`} className="absolute top-0 left-0 w-full h-full object-cover rounded-lg" />
+                                <div key={index} className="relative w-full h-1/4 pb-[100%] bg-gray-400 border-2 border-[#B4B4B8]">
+                                    <img src={src} alt={`model-${index}`} className="absolute top-0 left-0 w-full h-full object-cover" />
                                 </div>
                             ))}
                         </div>

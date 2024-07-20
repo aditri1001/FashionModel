@@ -1,7 +1,7 @@
 // import React from 'react';
 
 
-const Photographers = () => {
+const SectionPage = () => {
     return (
         <>
             <div className="bg-[#F8F8FF] overflow-hidden" >
@@ -215,4 +215,4 @@ const Photographers = () => {
     );
 }
 
-export default Photographers;
+export default SectionPage;
